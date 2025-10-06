@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mundo Pet</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header id="header-box" class="header-box">
+        <img src="./src/assets/logo.png" alt="Logo Mundo Pet" class="logo" />
+      </header>
+
+      <main id="main-schedule" class="main-schedule">
+        <header id="header-schedule" class="header-schedule">
+          <div id="title" class="title">
+            <h1>Sua Agenda</h1>
+            <span
+              >Aqui você pode ver todos os clientes e serviços agendados para
+              hoje.</span
+            >
+          </div>
+          <div id="calendar" class="calendar">
+            <input
+              type="date"
+              id="date"
+              name="date"
+              class="date"
+              value="2025-09-30"
+              required
+            />
+          </div>
+        </header>
+        <section id="period-list" class="period-list">
+          <section id="scheduled-period" class="scheduled-period">
+            <header id="title-morning" class="title-morning">
+              <img
+                src="./src/assets/icon-period-title-morning.svg"
+                alt="Manhã"
+              />
+              <strong>Manhã</strong>
+              <span>09h-12h</span>
+            </header>
+            <ul id="scheduled-list" class="scheduled-list">
+              <li>
+                <span class="schedule-data">
+                  <span class="col-hour">09:00</span>
+                  <span class="col-client"
+                    ><span class="col-pet">Thor</span> / Fernanda Costa</span
+                  ></span
+                >
+                <span class="col-service">Vacinação</span>
+                <span class="col-cancel">Remover agendamento</span>
+              </li>
+            </ul>
+          </section>
+          <section id="scheduled-period" class="scheduled-period">
+            <header id="title-afternoom" class="title-afternoom">
+              <img
+                src="./src/assets/icon-period-title-afternoom.svg"
+                alt="Tarde"
+              />
+              <strong>Tarde</strong>
+              <span>13h-18h</span>
+            </header>
+            <ul id="scheduled-list" class="scheduled-list">
+              <li>
+                <span class="schedule-data">
+                  <span class="col-hour">13:00</span>
+                  <span class="col-client"
+                    ><span class="col-pet">Mel</span> / João Souza</span
+                  ></span
+                >
+                <span class="col-service">Corte de Unhas</span>
+                <span class="col-cancel">Remover agendamento</span>
+              </li>
+              <li>
+                <span class="schedule-data">
+                  <span class="col-hour">14:00</span>
+                  <span class="col-client"
+                    ><span class="col-pet">Bella</span> / Pedro Martins
+                    Medeiros</span
+                  ></span
+                >
+                <span class="col-service">Aplicação Anti-Pulgas</span>
+                <span class="col-cancel">Remover agendamento</span>
+              </li>
+              <li>
+                <span class="schedule-data">
+                  <span class="col-hour">15:00</span>
+                  <span class="col-client"
+                    ><span class="col-pet">Simba</span> / Juliana Rocha</span
+                  ></span
+                >
+                <span class="col-service">Tosa Higiênica</span>
+                <span class="col-cancel">Remover agendamento</span>
+              </li>
+            </ul>
+          </section>
+          <section id="scheduled-period" class="scheduled-period">
+            <header id="title-nnigh" class="title-night">
+              <img src="./src/assets/icon-period-title-night.svg" alt="Noite" />
+              <strong>Tarde</strong>
+              <span>19h-21h</span>
+            </header>
+            <ul id="scheduled-list" class="scheduled-list"></ul>
+          </section>
+        </section>
+      </main>
+      <div id="modal-overlay" class="modal-overlay"></div>
+      <dialog id="modal-content" class="modal-content">
+        <span class="window-close">
+          <img
+            src="./src/assets/icon-modal-close.svg"
+            alt="Fecha janela"
+            id="window-close"
+          />
+        </span>
+
+        <h2>Agende um atendimento</h2>
+        <span class="modal-action"
+          >Preencha os dados do cliente para realizar um agendamento:</span
+        >
+        <form
+          name="scheduling-form"
+          id="scheduling-form"
+          class="scheduling-form"
+        >
+          <label>Nome do tutor</label>
+          <input
+            type="text"
+            name="tutor-name"
+            id="tutor-name"
+            placeholder="Nome do Tutor"
+            class="tutor-name"
+          />
+
+          <label>Nome do pet</label>
+          <input
+            type="text"
+            name="pet-name"
+            id="pet-name"
+            placeholder="Nome do Pet"
+            class="pet-name"
+          />
+
+          <label>Telefone</label>
+          <input
+            type="tel"
+            name="tutor-phone"
+            id="tutor-phone"
+            class="phone-tutor"
+            placeholder="(00) 0 0000-0000"
+            required
+          />
+          <label>Descrição do serviço</label>
+          <textarea
+            name="description"
+            id="service-description"
+            class="service-description"
+            placeholder="Banho e Tosa"
+          ></textarea>
+          <div id="container-data-hour" class="container-data-hour">
+            <div id="date-box" class="date-box">
+              <label>Data</label>
+              <input
+                type="date"
+                name="scheduling-date"
+                id="scheduling-date"
+                class="scheduling-date"
+              />
+            </div>
+            <div id="hour-box" class="hour-box">
+              <label>Hora</label>
+              <input
+                type="time"
+                name="scheduling-time"
+                id="scheduling-time"
+                class="scheduling-time"
+                value="12:00"
+                placeholder="12:00"
+              />
+            </div>
+          </div>
+          <div id="container-schedule-button" class="container-schedule-button">
+            <button id="schedule-button" class="button-submit schedule-button">
+              AGENDAR
+            </button>
+          </div>
+        </form>
+      </dialog>
+      <footer class="footer">
+        <button id="newSchedulingButton" class="button-submit">
+          NOVO AGENDAMENTO
+        </button>
+      </footer>
+    </div>
+  </body>
+</html>
