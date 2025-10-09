@@ -1,28 +1,4 @@
 {
   "schedules": [
-    {
-      "id": "1516515",
-      "pet": "Rufus",
-      "tutor": "Adriano de Medeiros",
-      "servico": "Banho e tosa"
-    },
-    {
-      "id": "1516516",
-      "pet": "Popeye",
-      "tutor": "Matheus Dis",
-      "servico": "Corte de unhas e anti-pulgas"
-    },
-    {
-      "id": "1516517",
-      "pet": "Brutus",
-      "tutor": "Lucas Dias",
-      "servico": "Vermifungo"
-    },
-    {
-      "id": "1516518",
-      "pet": "Charlotte",
-      "tutor": "Breno Dias",
-      "servico": "Vacinação"
-    }
   ]
 }

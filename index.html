@@ -39,7 +39,7 @@
           </div>
         </header>
         <section id="period-list" class="period-list">
-          <section id="scheduled-period" class="scheduled-period">
+          <section class="scheduled-period">
             <header id="title-morning" class="title-morning">
               <img
                 src="./src/assets/icon-period-title-morning.svg"
@@ -48,21 +48,10 @@
               <strong>Manhã</strong>
               <span>09h-12h</span>
             </header>
-            <ul id="scheduled-list" class="scheduled-list">
-              <li>
-                <span class="schedule-data">
-                  <span class="col-hour">09:00</span>
-                  <span class="col-client"
-                    ><span class="col-pet">Thor</span> / Fernanda Costa</span
-                  ></span
-                >
-                <span class="col-service">Vacinação</span>
-                <span class="col-cancel">Remover agendamento</span>
-              </li>
-            </ul>
+            <ul id="morning" class="scheduled-list"></ul>
           </section>
-          <section id="scheduled-period" class="scheduled-period">
-            <header id="title-afternoom" class="title-afternoom">
+          <section class="scheduled-period">
+            <header id="title-afternoon" class="title-afternoom">
               <img
                 src="./src/assets/icon-period-title-afternoom.svg"
                 alt="Tarde"
@@ -70,47 +59,15 @@
               <strong>Tarde</strong>
               <span>13h-18h</span>
             </header>
-            <ul id="scheduled-list" class="scheduled-list">
-              <li>
-                <span class="schedule-data">
-                  <span class="col-hour">13:00</span>
-                  <span class="col-client"
-                    ><span class="col-pet">Mel</span> / João Souza</span
-                  ></span
-                >
-                <span class="col-service">Corte de Unhas</span>
-                <span class="col-cancel">Remover agendamento</span>
-              </li>
-              <li>
-                <span class="schedule-data">
-                  <span class="col-hour">14:00</span>
-                  <span class="col-client"
-                    ><span class="col-pet">Bella</span> / Pedro Martins
-                    Medeiros</span
-                  ></span
-                >
-                <span class="col-service">Aplicação Anti-Pulgas</span>
-                <span class="col-cancel">Remover agendamento</span>
-              </li>
-              <li>
-                <span class="schedule-data">
-                  <span class="col-hour">15:00</span>
-                  <span class="col-client"
-                    ><span class="col-pet">Simba</span> / Juliana Rocha</span
-                  ></span
-                >
-                <span class="col-service">Tosa Higiênica</span>
-                <span class="col-cancel">Remover agendamento</span>
-              </li>
-            </ul>
+            <ul id="afternoon" class="scheduled-list"></ul>
           </section>
-          <section id="scheduled-period" class="scheduled-period">
-            <header id="title-nnigh" class="title-night">
+          <section class="scheduled-period">
+            <header id="title-nigh" class="title-night">
               <img src="./src/assets/icon-period-title-night.svg" alt="Noite" />
-              <strong>Tarde</strong>
+              <strong>Noite</strong>
               <span>19h-21h</span>
             </header>
-            <ul id="scheduled-list" class="scheduled-list"></ul>
+            <ul id="night" class="scheduled-list"></ul>
           </section>
         </section>
       </main>
@@ -140,6 +97,7 @@
             id="tutor-name"
             placeholder="Nome do Tutor"
             class="tutor-name"
+            required
           />
 
           <label>Nome do pet</label>
@@ -149,6 +107,7 @@
             id="pet-name"
             placeholder="Nome do Pet"
             class="pet-name"
+            required
           />
 
           <label>Telefone</label>
@@ -166,6 +125,7 @@
             id="service-description"
             class="service-description"
             placeholder="Banho e Tosa"
+            required
           ></textarea>
           <div id="container-data-hour" class="container-data-hour">
             <div id="date-box" class="date-box">
@@ -175,18 +135,17 @@
                 name="scheduling-date"
                 id="scheduling-date"
                 class="scheduling-date"
+                required
               />
             </div>
             <div id="hour-box" class="hour-box">
               <label>Hora</label>
-              <input
-                type="time"
-                name="scheduling-time"
+              <select
                 id="scheduling-time"
+                name="scheduling-time"
                 class="scheduling-time"
-                value="12:00"
-                placeholder="12:00"
-              />
+                required
+              ></select>
             </div>
           </div>
           <div id="container-schedule-button" class="container-schedule-button">
@@ -196,6 +155,7 @@
           </div>
         </form>
       </dialog>
+
       <footer class="footer">
         <button id="newSchedulingButton" class="button-submit">
           NOVO AGENDAMENTO
